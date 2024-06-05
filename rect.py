@@ -18,7 +18,11 @@ class Rect():
                 return True
         return False
 
-    def isGameOver(self, ball_pos):
+    def minusLIFE(self, ball_pos):
         if ball_pos[1] >= 530:
+            LIFE -= 1
+
+    def isGameOver(self, ball_pos):
+        if LIFE == 0:
             return True
         return False

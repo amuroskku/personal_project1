@@ -20,6 +20,7 @@ JIRACHI = (249, 255, 194)
 Jir_num = 0
 jirachi_count = 0
 BLUE1 = (0, 138, 230)
+LIFE = 3
 
 WINDOW_WIDTH = 600
 WINDOW_HEIGHT = 680
