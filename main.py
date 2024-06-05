@@ -1,8 +1,13 @@
-mport pygame
+import pygame
 from pygame.locals import *
 import sys
 import pygwidgets
 import random, math
+from ball import Ball
+from rect import Rect
+from button import Button
+from brickobj import BrickObj
+from pkm import Pkm
 
 LIGHT_GRAY = (197, 250, 250)
 BLACK = (0, 0, 0)
@@ -49,35 +54,35 @@ leaderscreen = pygame.display.set_mode((LEADERBOARD_WIDTH, LEADERBOARD_HEIGHT))
 screen = pygame.display.set_mode(SCREEN_SIZE)
 
 
-ce_1 = pygame.image.load("ceframe1.gif")
-ce_2 = pygame.image.load("ceframe2.gif")
-ce_3 = pygame.image.load("ceframe3.gif")
-ce_4 = pygame.image.load("ceframe4.gif")
-ce_5 = pygame.image.load("ceframe5.gif")
-ce_6 = pygame.image.load("ceframe6.gif")
-ce_7 = pygame.image.load("ceframe7.gif")
-ce_8 = pygame.image.load("ceframe8.gif")
-ce_9 = pygame.image.load("ceframe9.gif")
-ce_10 = pygame.image.load("ceframe10.gif")
-ce_11 = pygame.image.load("ceframe11.gif")
-ce_12 = pygame.image.load("ceframe12.gif")
-ce_13 = pygame.image.load("ceframe13.gif")
-ce_14 = pygame.image.load("ceframe14.gif")
-ce_15 = pygame.image.load("ceframe15.gif")
+ce_1 = pygame.image.load("images/ceframe1.gif")
+ce_2 = pygame.image.load("images/ceframe2.gif")
+ce_3 = pygame.image.load("images/ceframe3.gif")
+ce_4 = pygame.image.load("images/ceframe4.gif")
+ce_5 = pygame.image.load("images/ceframe5.gif")
+ce_6 = pygame.image.load("images/ceframe6.gif")
+ce_7 = pygame.image.load("images/ceframe7.gif")
+ce_8 = pygame.image.load("images/ceframe8.gif")
+ce_9 = pygame.image.load("images/ceframe9.gif")
+ce_10 = pygame.image.load("images/ceframe10.gif")
+ce_11 = pygame.image.load("images/ceframe11.gif")
+ce_12 = pygame.image.load("images/ceframe12.gif")
+ce_13 = pygame.image.load("images/ceframe13.gif")
+ce_14 = pygame.image.load("images/ceframe14.gif")
+ce_15 = pygame.image.load("images/ceframe15.gif")
 
-ji_1 = pygame.image.load("jiframe1.gif")
-ji_2 = pygame.image.load("jiframe2.gif")
-ji_3 = pygame.image.load("jiframe3.gif")
-ji_4 = pygame.image.load("jiframe4.gif")
-ji_5 = pygame.image.load("jiframe5.gif")
-ji_6 = pygame.image.load("jiframe6.gif")
-ji_7 = pygame.image.load("jiframe7.gif")
-ji_8 = pygame.image.load("jiframe8.gif")
-ji_9 = pygame.image.load("jiframe9.gif")
-ji_10 = pygame.image.load("jiframe10.gif")
-ji_11 = pygame.image.load("jiframe11.gif")
-ji_12 = pygame.image.load("jiframe12.gif")
-ji_13 = pygame.image.load("jiframe13.gif")
+ji_1 = pygame.image.load("images/jiframe1.gif")
+ji_2 = pygame.image.load("images/jiframe2.gif")
+ji_3 = pygame.image.load("images/jiframe3.gif")
+ji_4 = pygame.image.load("images/jiframe4.gif")
+ji_5 = pygame.image.load("images/jiframe5.gif")
+ji_6 = pygame.image.load("images/jiframe6.gif")
+ji_7 = pygame.image.load("images/jiframe7.gif")
+ji_8 = pygame.image.load("images/jiframe8.gif")
+ji_9 = pygame.image.load("images/jiframe9.gif")
+ji_10 = pygame.image.load("images/jiframe10.gif")
+ji_11 = pygame.image.load("images/jiframe11.gif")
+ji_12 = pygame.image.load("images/jiframe12.gif")
+ji_13 = pygame.image.load("images/jiframe13.gif")
 
 
 pygame.init()
