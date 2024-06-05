@@ -28,7 +28,8 @@ class Button():
 
         brickSet = []
         PkmSet = []
-        jir_set =[]
+        jir_set = []
+        item_set = []
         for idx in range(self.brickNum):
             brickX = (store[idx] % BRICK_NUM_ROW) * BRICK_WIDTH + 50
             brickY = self._detYCoord(store[idx])
@@ -50,8 +51,14 @@ class Button():
             Jirbrick.drawJI()
         oBall = Ball(self.screen, WHITE)
         oBall.drawBall(BALL_ORG_X, BALL_ORG_Y)
+        for i in range(2):  # You can adjust the number of items created
+            itemX = random.randint(50, 250)  # Random x-coordinate
+            itemY = random.randint(50, 400)  # Random y-coordinate
+            itemType = random.randint(1, 2)  # Random item type (1 or 2)
+            item = Item(itemX, itemY, self.screen, itemType)
+            item_set.append(item)
 
-        return Org_X, Org_Y, brickSet, PkmSet, jir_set, oBall
+        return Org_X, Org_Y, brickSet, PkmSet, jir_set, oBall, item_set
 
     def handleEvent(self, eventObj, textButtonRect):
         if eventObj.type == pygame.MOUSEBUTTONDOWN:

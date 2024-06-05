@@ -8,8 +8,10 @@ from rect import Rect
 from button import Button
 from brickobj import BrickObj
 from pkm import Pkm
+from items import Item
 
 LIGHT_GRAY = (197, 250, 250)
+RED - (255, 0, 0)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 ORANGE = (219, 72, 41)
@@ -118,7 +120,7 @@ while True:
 
         if ctrlButton.handleEvent(event, bttn1Rect):
             random_prob = random.random()
-            Ref_X, Ref_Y, brickSet, PkmSet, jir_set, oBall = ctrlButton.game_Start()
+            Ref_X, Ref_Y, brickSet, PkmSet, jir_set, oBall, item_set = ctrlButton.game_Start()
             ballPos = [BALL_ORG_X, BALL_ORG_Y]
             xSpeed = 0
             ySpeed = BALL_PIXELS_TO_MOVE
@@ -159,7 +161,7 @@ while True:
                 NUM_BRICKS += 2
                 random_prob = random.random()
                 ctrlButton = Button(oButton1, window, screen, NUM_BRICKS)
-                Ref_X, Ref_Y, brickSet, PkmSet,jir_set, oBall = ctrlButton.game_Start()
+                Ref_X, Ref_Y, brickSet, PkmSet,jir_set, oBall, item_set = ctrlButton.game_Start()
                 ballPos = [BALL_ORG_X, BALL_ORG_Y]
                 xSpeed = 0
                 ySpeed = BALL_PIXELS_TO_MOVE
@@ -220,6 +222,15 @@ while True:
         if Jir_num >= 70:
             if len(jir_set) >=1:
                 jir_set[0].drawJI()
+        for i in item_set:
+            item.itemDraw()
+        for item in itemSet:
+        if item.isContact(ballPos):
+            if item.item_type == 1:  # Adding life
+                pass
+            elif item.item_type == 2:  # Add new ball
+                pass
+            itemSet.remove(item)
         if oRef.isContact(ballPos) == True:
             if (ballPos[0] - Ref_X) <= 0.5 * RECT_WIDTH:
                 changeRate = (RECT_WIDTH * 0.5 - (ballPos[0] - Ref_X)) / (RECT_WIDTH * 0.5)
